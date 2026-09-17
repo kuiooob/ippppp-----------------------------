@@ -6,8 +6,8 @@ log-level: info
 proxies:
 - name: 🇧🇬 BG 01 - xiaohe
   type: vless
-  server: 185.217.108.229
-  port: 23351
+  server: 188.130.207.30
+  port: 2053
   uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
   udp: true
   tls: true
@@ -15,7 +15,7 @@ proxies:
   servername: cdn8848.776676.xyz
   network: ws
   ws-opts:
-    path: /help?ed=2560fp=chrome
+    path: /
     headers:
       Host: cdn8848.776676.xyz
 - name: 🇧🇬 BG 02 - xiaohe
@@ -29,7 +29,7 @@ proxies:
   servername: neth9.lunariai.ru
 - name: 🇧🇬 BG 03 - xiaohe
   type: vless
-  server: 192.145.31.5
+  server: neth9.lunariai.ru
   port: 8443
   uuid: 9f73cf9a-c68f-4e6d-90f0-e66b64f52f8a
   udp: true
@@ -47,7 +47,7 @@ proxies:
   servername: neth9.lunariai.ru
 - name: 🇧🇬 BG 05 - xiaohe
   type: vless
-  server: neth9.lunariai.ru
+  server: 192.145.31.5
   port: 8443
   uuid: 9f73cf9a-c68f-4e6d-90f0-e66b64f52f8a
   udp: true
