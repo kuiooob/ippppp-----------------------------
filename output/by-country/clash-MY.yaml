@@ -5,32 +5,39 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇲🇾 MY 01 - xiaohe
-  type: vless
-  server: 172.66.140.62
-  port: 8880
-  uuid: 160ca353-676d-4b7f-a041-0289e388b865
+  type: vmess
+  server: 47.250.135.244
+  port: 10000
+  uuid: aedc66b8-99d7-4a21-8310-61870e7f870d
+  alterId: 0
+  cipher: auto
   udp: true
   tls: false
   skip-cert-verify: true
+- name: 🇲🇾 MY 02 - xiaohe
+  type: vless
+  server: 23.141.12.134
+  port: 8443
+  uuid: fdc48be3-a615-41ac-8bd1-ed844c931048
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: edgetunnel-4uw.pages.dev
   network: ws
   ws-opts:
     path: /
     headers:
-      Host: proud-cloud-7bdd.208-a52.workers.dev
-- name: 🇲🇾 MY 02 - xiaohe
-  type: vless
-  server: 104.21.98.146
-  port: 8443
-  uuid: 50414e45-4c5f-5a45-5553-48493148ec15
+      Host: edgetunnel-4uw.pages.dev
+- name: 🇲🇾 MY 03 - xiaohe
+  type: vmess
+  server: 47.250.135.244
+  port: 10000
+  uuid: aedc66b8-99d7-4a21-8310-61870e7f870d
+  alterId: 0
+  cipher: auto
   udp: true
-  tls: true
+  tls: false
   skip-cert-verify: true
-  servername: cgzdynepurqs.mercury061.workers.dev
-  network: ws
-  ws-opts:
-    path: /stream/PANEL_ZEUS/48493148ec15
-    headers:
-      Host: cgzdynepurqs.mercury061.workers.dev
 proxy-groups:
 - name: PROXIES
   type: select
@@ -38,6 +45,7 @@ proxy-groups:
   - AUTO
   - 🇲🇾 MY 01 - xiaohe
   - 🇲🇾 MY 02 - xiaohe
+  - 🇲🇾 MY 03 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
@@ -45,5 +53,6 @@ proxy-groups:
   proxies:
   - 🇲🇾 MY 01 - xiaohe
   - 🇲🇾 MY 02 - xiaohe
+  - 🇲🇾 MY 03 - xiaohe
 rules:
 - MATCH,PROXIES
